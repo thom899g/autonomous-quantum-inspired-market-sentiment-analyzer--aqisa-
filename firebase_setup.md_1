@@ -1,0 +1,31 @@
+# FIREBASE SETUP INSTRUCTIONS FOR AQISA
+
+## 1. Create Firebase Project
+1. Navigate to https://console.firebase.google.com/
+2. Click "Create Project" → Name: "aqisa-prod"
+3. Enable Google Analytics (optional)
+4. Wait for project creation (30-60 seconds)
+
+## 2. Enable Required Services
+1. **Firestore Database**:
+   - Go to Build → Firestore Database → Create Database
+   - Start in production mode → Location: europe-west3 (Frankfurt)
+   - Security Rules: Use default initially
+
+2. **Realtime Database**:
+   - Go to Build → Realtime Database → Create Database
+   - Location: europe-west3
+   - Security Rules: Set to test mode for development
+
+3. **Authentication** (optional for future):
+   - Go to Build → Authentication → Get Started
+   - Enable Email/Password provider
+
+## 3. Generate Service Account Key
+1. Go to Project Settings → Service Accounts
+2. Click "Generate New Private Key"
+3. Save as `firebase-creds.json` in project root
+4. NEVER commit this file to version control
+
+## 4. Security Rules Configuration
+Update Realtime Database rules in console:
